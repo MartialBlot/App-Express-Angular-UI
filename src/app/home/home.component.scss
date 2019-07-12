@@ -14,10 +14,17 @@
   -webkit-text-stroke-color: pink;
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 140px;
 }
 
 .link-btn{
+  font-size: 22px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  .menu-title {
+  margin-bottom: 70px;
+  }
 }
