@@ -4,9 +4,9 @@
 
 <div class="container">
   <div class="row">
-<div class="col-md-4"><button class="btn btn-warning col-sm link-btn">Voir mes playlists</button></div>
-<div class="col-md-4"><button class="btn btn-warning col-sm link-btn">Créer une playlist</button></div>
-<div class="col-md-4"><button class="btn btn-warning col-sm link-btn">Ajouter un morceau</button></div>
+<div class="col-md-4" [routerLink]="['playlists']"><button class="btn btn-warning col-sm link-btn">Voir mes playlists</button></div>
+<div class="col-md-4" [routerLink]="['newplaylist']"><button class="btn btn-warning col-sm link-btn">Créer une playlist</button></div>
+<div class="col-md-4" [routerLink]="['newtrack']"><button class="btn btn-warning col-sm link-btn">Ajouter un morceau</button></div>
   </div>
 </div>
 
