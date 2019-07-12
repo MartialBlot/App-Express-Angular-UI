@@ -1,4 +1,4 @@
-export class Article {
+export class track {
   constructor(
     public id: number,
     public playlist_id: number,
