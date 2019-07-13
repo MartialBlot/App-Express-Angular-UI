@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from '../playlist.service';
-import { Playlist } from '../models/playlist.model';
-
+import { Playlist } from '../models/Playlist.model';
 @Component({
   selector: 'app-creer-playlist',
   templateUrl: './creer-playlist.component.html',
@@ -9,8 +8,7 @@ import { Playlist } from '../models/playlist.model';
 })
 export class CreerPlaylistComponent implements OnInit {
 
-  constructor(private service: PlaylistService,
-              ) { }
+  constructor(private service: PlaylistService,) { }
 
   public playlist: Playlist;
 
@@ -18,8 +16,11 @@ export class CreerPlaylistComponent implements OnInit {
   }
 
   createPlaylist(playlist){
-    this.service.createPlaylist(playlist).subscribe((playlist) => {
-
+    console.log(playlist.value)
+    this.service.createPlaylist(playlist.value).subscribe((playlist) => {
+      if(playlist){
+        alert('La nouvelle playlist a bien été enregistrée')
+      }
     });
   }
 
