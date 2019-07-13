@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { PlaylistService } from '../playlist.service';
-import { Playlist } from '../models/playlist.model';
+import { Playlist } from '../models/Playlist.model';
 
 @Component({
   selector: 'app-voir-playlist',
