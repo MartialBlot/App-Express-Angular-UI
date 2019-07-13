@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaylistService } from '../playlist.service';
+import { Playlist } from '../models/playlist.model';
 
 @Component({
   selector: 'app-creer-playlist',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreerPlaylistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PlaylistService,
+              ) { }
+
+  public playlist: Playlist;
 
   ngOnInit() {
+  }
+
+  createPlaylist(playlist){
+    this.service.createPlaylist(playlist).subscribe((playlist) => {
+
+    });
   }
 
 }

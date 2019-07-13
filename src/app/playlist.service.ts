@@ -21,4 +21,8 @@ export class PlaylistService {
       )
   };
 
+  public createPlaylist(playlistForm: Playlist): Observable <Playlist>{
+    return this.http.post<Playlist>(`${this.api}/playlist`, playlistForm);
+  }
+
 }

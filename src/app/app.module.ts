@@ -7,6 +7,8 @@ import { VoirPlaylistComponent } from './voir-playlist/voir-playlist.component';
 import { CreerPlaylistComponent } from './creer-playlist/creer-playlist.component';
 import { CreerMorceauComponent } from './creer-morceau/creer-morceau.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,12 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     VoirPlaylistComponent,
     CreerPlaylistComponent,
-    CreerMorceauComponent
+    CreerMorceauComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
