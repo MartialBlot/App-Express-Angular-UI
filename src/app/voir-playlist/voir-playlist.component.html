@@ -1,1 +1,9 @@
 <h1 class="title">Vos Playlists</h1>
+<ng-container *ngFor="let playlist of playlists">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{playlist.title}}</h5>
+      <p class="card-text">Genre : {{playlist.genre}}</p>
+    </div>
+  </div>
+</ng-container>

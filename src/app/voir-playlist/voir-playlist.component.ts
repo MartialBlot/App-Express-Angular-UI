@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
+import { PlaylistService } from '../playlist.service';
+import { Playlist } from '../models/playlist.model';
 
 @Component({
   selector: 'app-voir-playlist',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VoirPlaylistComponent implements OnInit {
 
-  constructor() { }
+  public playlists;
+
+  constructor(private route: ActivatedRoute,
+              public service: PlaylistService,) { }
 
   ngOnInit() {
+    this.service.getPlaylists().subscribe((playlists: Playlist) => {
+      this.playlists = playlists;
+    })
   }
 
 }

@@ -1,4 +1,4 @@
-export class playlist {
+export class Playlist {
   constructor(
     public id: number,
     public title: string,
