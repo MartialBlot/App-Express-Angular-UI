@@ -25,4 +25,12 @@ export class PlaylistService {
     return this.http.post<Playlist>(`${this.api}/playlist`, playlistForm);
   }
 
+  public deletePlaylist(id: number): Observable<Playlist> {
+    return this.http.delete(`${this.api}/playlist/${id}`).pipe(
+      map((playlist: any) => {
+        return  playlist as Playlist;
+      }),
+    );
+  }
+
 }

@@ -19,4 +19,13 @@ export class VoirPlaylistComponent implements OnInit {
     })
   }
 
+  deletePlaylist(id, index){
+    if(confirm('Voulez vous vraiment supprimer ?')){
+      this.service.deletePlaylist(id).subscribe(() => {
+      });
+      this.playlists.splice(index,1);
+      alert("Playlist supprimée.");
+    }else { };
+  }
+
 }

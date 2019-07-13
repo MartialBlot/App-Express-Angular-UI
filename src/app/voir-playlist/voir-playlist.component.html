@@ -1,9 +1,10 @@
 <h1 class="title">Vos Playlists</h1>
-<ng-container *ngFor="let playlist of playlists">
+<ng-container *ngFor="let playlist of playlists; let idx = index">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{playlist.title}}</h5>
       <p class="card-text">Genre : {{playlist.genre}}</p>
+  <button class="btn btn-danger" type="bouton" (click)="deletePlaylist(playlist.id, idx)">Supprimer</button>
     </div>
   </div>
 </ng-container>
