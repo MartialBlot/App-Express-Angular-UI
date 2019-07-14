@@ -1,7 +1,11 @@
 <h1 class="title">Nouveau morceau</h1>
 <form (ngSubmit)="addTrack(newTrack)" #newTrack="ngForm">
   <div>
-    <input type='number' placeholder="Quelle playlist" name="playlist_id" #playlist_id="ngModel" [ngModel]>
+      <select [(ngModel)]="idPlaylist" name="playlist_id">
+        <option>Ajouter dans quelle playlist ?</option>
+          <option *ngFor="let playlist of playlists" [ngValue]="playlist.id">{{playlist.title}}</option>
+      </select>
+    <input [hidden]="true" type='number' placeholder="Quelle playlist" name="playlist_id" #playlist_id="ngModel" [(ngModel)]="idPlaylist" [ngModel]>
   </div>
   <div>
     <input type='text' placeholder="Titre" name="title" #title="ngModel" [ngModel]>

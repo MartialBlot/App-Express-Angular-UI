@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from '../playlist.service';
+import { Playlist } from '../models/playlist.model';
 
 @Component({
   selector: 'app-creer-morceau',
@@ -8,9 +9,15 @@ import { PlaylistService } from '../playlist.service';
 })
 export class CreerMorceauComponent implements OnInit {
 
+  public playlists;
+  public idPlaylist;
+
   constructor(private service: PlaylistService) { }
 
   ngOnInit() {
+    this.service.getPlaylists().subscribe((playlists: Playlist) => {
+      this.playlists = playlists;
+    })
   }
 
   addTrack(newTrack){
