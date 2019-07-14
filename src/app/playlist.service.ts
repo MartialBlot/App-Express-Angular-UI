@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Playlist } from './models/Playlist.model';
+import { Playlist } from './models/playlist.model';
+import { Track } from './models/track.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,10 @@ export class PlaylistService {
         return  playlist as Playlist;
       }),
     );
+  }
+
+  public addTrack(trackForm: Track): Observable <Track>{
+    return this.http.post<Track>(`${this.api}/tracks`, trackForm);
   }
 
 }

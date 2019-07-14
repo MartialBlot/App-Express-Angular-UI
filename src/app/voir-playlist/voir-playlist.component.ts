@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from '../playlist.service';
-import { Playlist } from '../models/Playlist.model';
+import { Playlist } from '../models/playlist.model';
 
 @Component({
   selector: 'app-voir-playlist',

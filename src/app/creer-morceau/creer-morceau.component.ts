@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaylistService } from '../playlist.service';
 
 @Component({
   selector: 'app-creer-morceau',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreerMorceauComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PlaylistService) { }
 
   ngOnInit() {
   }
 
+  addTrack(newTrack){
+    this.service.addTrack(newTrack.value).subscribe((track) => {
+      console.log(track)
+      if(track){
+        alert('Le nouveau titre a bien été enregistré')
+      }
+    });
+  }
 }

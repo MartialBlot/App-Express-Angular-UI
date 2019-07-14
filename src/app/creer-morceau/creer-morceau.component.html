@@ -1,1 +1,19 @@
 <h1 class="title">Nouveau morceau</h1>
+<form (ngSubmit)="addTrack(newTrack)" #newTrack="ngForm">
+  <div>
+    <input type='number' placeholder="Quelle playlist" name="playlist_id" #playlist_id="ngModel" [ngModel]>
+  </div>
+  <div>
+    <input type='text' placeholder="Titre" name="title" #title="ngModel" [ngModel]>
+  </div>
+  <div>
+    <input type='text' placeholder="Artiste" name="artist" #artist="ngModel" [ngModel]>
+  </div>
+  <div>
+    <input type='text' placeholder="Lien photo album" name="album_picture" #album_picture="ngModel" [ngModel]>
+  </div>
+  <div>
+    <input type='text' placeholder="Lien youtube video" name="youtube_url" #youtube_url="ngModel" [ngModel]>
+  </div>
+  <button class='btn btn-success' type="submit" >Enregistrer la playlist</button>
+</form>
