@@ -6,10 +6,11 @@
     <div class="card-body">
       <h5 class="card-title">{{playlist.title}}</h5>
       <p class="card-text">Genre : {{playlist.genre}}</p>
-      <button class="btn btn-warning mr-5" type="bouton">Titres</button>
+      <button class="btn btn-warning mr-5" type="bouton" (click)='openModalTracks()'>Titres</button>
   <button class="btn btn-danger" type="bouton" (click)="deletePlaylist(playlist.id, idx)">Supprimer</button>
     </div>
   </div>
 </ng-container>
 </div>
 </div>
+<app-voir-tracks [openModal] = "openModal"></app-voir-tracks>

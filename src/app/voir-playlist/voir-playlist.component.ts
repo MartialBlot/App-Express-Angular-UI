@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { PlaylistService } from '../playlist.service';
 import { Playlist } from '../models/playlist.model';
 
@@ -9,6 +9,8 @@ import { Playlist } from '../models/playlist.model';
 })
 export class VoirPlaylistComponent implements OnInit {
 
+  openModal: EventEmitter<boolean> = new EventEmitter();
+
   public playlists;
 
   constructor(private service: PlaylistService,) { }
@@ -17,6 +19,10 @@ export class VoirPlaylistComponent implements OnInit {
     this.service.getPlaylists().subscribe((playlists: Playlist) => {
       this.playlists = playlists;
     })
+  }
+
+  openModalTracks(){
+    this.openModal.emit(true);
   }
 
   deletePlaylist(id, index){

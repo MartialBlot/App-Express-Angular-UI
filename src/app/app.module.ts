@@ -8,6 +8,9 @@ import { CreerPlaylistComponent } from './creer-playlist/creer-playlist.componen
 import { CreerMorceauComponent } from './creer-morceau/creer-morceau.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { VoirTracksComponent } from './voir-tracks/voir-tracks.component';
+import { PlayerComponent } from './player/player.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,8 +20,11 @@ import { FormsModule } from '@angular/forms';
     VoirPlaylistComponent,
     CreerPlaylistComponent,
     CreerMorceauComponent,
+    VoirTracksComponent,
+    PlayerComponent,
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
