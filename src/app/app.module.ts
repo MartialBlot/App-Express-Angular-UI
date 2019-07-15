@@ -13,6 +13,7 @@ import { PlayerComponent } from './player/player.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SafePipe } from './pipes/safe.pipe';
 import { ModifierPlaylistComponent } from './modifier-playlist/modifier-playlist.component';
+import { ModifierTrackComponent } from './modifier-track/modifier-track.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ModifierPlaylistComponent } from './modifier-playlist/modifier-playlist
     VoirTracksComponent,
     PlayerComponent,
     SafePipe,
-    ModifierPlaylistComponent
+    ModifierPlaylistComponent,
+    ModifierTrackComponent
   ],
   imports: [
     NgbModule,

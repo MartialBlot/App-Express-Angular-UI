@@ -13,7 +13,6 @@ export class ModifierPlaylistComponent implements OnInit {
 
   @ViewChild('content', { static: true })
   public content: TemplateRef<any>;
-
   @Input()
   public openEdit: EventEmitter<boolean>;
   @Input()
@@ -30,7 +29,7 @@ export class ModifierPlaylistComponent implements OnInit {
       this.openEdit.subscribe(data => {
         this.modalService.open(this.content);
       });
-  }
+    }
   }
 
   close(content) {

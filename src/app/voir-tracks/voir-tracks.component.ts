@@ -20,10 +20,11 @@ export class VoirTracksComponent implements OnInit {
   public playlist: Playlist;
   @Input()
   public tracks;
-
   public track;
+  public trackForm;
 
   playTrack: EventEmitter<boolean> = new EventEmitter();
+  editTrack: EventEmitter<boolean> = new EventEmitter();
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
               private service: PlaylistService) {
@@ -55,6 +56,11 @@ export class VoirTracksComponent implements OnInit {
       this.tracks.splice(index,1);
       alert("Playlist supprimée.");
     }else { };
+  }
+
+  openEditionTrack(track){
+    this.trackForm = track;
+    this.editTrack.emit(true);
   }
 
 }

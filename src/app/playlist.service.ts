@@ -57,4 +57,8 @@ export class PlaylistService {
     return this.http.put<Playlist>(`${this.api}/playlist/${id}`, playlistForm);
   }
 
+  public updateTrack(id: string, track: Playlist): Observable<Track> {
+    return this.http.put<Track>(`${this.api}/tracks/${id}`, track);
+  }
+
 }
