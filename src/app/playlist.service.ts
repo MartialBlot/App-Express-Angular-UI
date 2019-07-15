@@ -23,11 +23,11 @@ export class PlaylistService {
   };
 
   public createPlaylist(playlistForm: Playlist): Observable <Playlist>{
-    return this.http.post<Playlist>(`${this.api}/playlist`, playlistForm);
+    return this.http.post<Playlist>(`${this.api}/playlists`, playlistForm);
   }
 
   public deletePlaylist(id: number): Observable<Playlist> {
-    return this.http.delete(`${this.api}/playlist/${id}`).pipe(
+    return this.http.delete(`${this.api}/playlists/${id}`).pipe(
       map((playlist: any) => {
         return  playlist as Playlist;
       }),
@@ -47,14 +47,14 @@ export class PlaylistService {
   }
 
   public getTracks(id: number): Observable<Track>{
-    return this.http.get(`${this.api}/tracks/playlist/${id}`).pipe(
+    return this.http.get(`${this.api}/tracks/playlists/${id}`).pipe(
       map((tracks: any) => { return tracks as Track
       })
       )
   };
 
   public updatePlaylist(id: string, playlistForm: Playlist): Observable<Playlist> {
-    return this.http.put<Playlist>(`${this.api}/playlist/${id}`, playlistForm);
+    return this.http.put<Playlist>(`${this.api}/playlists/${id}`, playlistForm);
   }
 
   public updateTrack(id: string, track: Playlist): Observable<Track> {
