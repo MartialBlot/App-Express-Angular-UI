@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { VoirTracksComponent } from './voir-tracks/voir-tracks.component';
 import { PlayerComponent } from './player/player.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CreerMorceauComponent,
     VoirTracksComponent,
     PlayerComponent,
+    SafePipe
   ],
   imports: [
     NgbModule,

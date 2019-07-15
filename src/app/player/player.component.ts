@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, ViewChild, TemplateRef } from '@angular/core';
 import { Track } from '../models/track.model';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-player',
@@ -18,7 +19,7 @@ export class PlayerComponent implements OnInit {
   @Input()
   public playTrack: EventEmitter<boolean>;
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal,) {
+  constructor(config: NgbModalConfig, private modalService: NgbModal, public sanitizer: DomSanitizer) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
