@@ -1,3 +1,10 @@
-<p>
-  player works!
-</p>
+<ng-template #content>
+  <div class="modal-body">
+    <h4>Lecture du titre {{track.title}} de {{track.artist}}</h4>
+    <hr>
+  </div>
+    
+  <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="close(content)">Fermer</button>
+  </div>
+</ng-template>

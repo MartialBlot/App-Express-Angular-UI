@@ -8,7 +8,7 @@ import { Track } from '../models/track.model';
   selector: 'app-voir-tracks',
   templateUrl: './voir-tracks.component.html',
   styleUrls: ['./voir-tracks.component.scss'],
-  providers: [NgbModalConfig, NgbModal]
+  providers: [NgbModalConfig, NgbModal],
 })
 export class VoirTracksComponent implements OnInit {
 
@@ -22,6 +22,9 @@ export class VoirTracksComponent implements OnInit {
   @Input()
   public tracks;
 
+  public track;
+
+  playTrack: EventEmitter<boolean> = new EventEmitter();
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
               private service: PlaylistService) {
@@ -35,6 +38,11 @@ export class VoirTracksComponent implements OnInit {
         this.modalService.open(this.content);
       });
     }
+  }
+
+  playTracks(track){
+    this.track = track;
+    this.playTrack.emit(true);
   }
 
   close(content) {
