@@ -12,6 +12,7 @@ import { VoirTracksComponent } from './voir-tracks/voir-tracks.component';
 import { PlayerComponent } from './player/player.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SafePipe } from './pipes/safe.pipe';
+import { ModifierPlaylistComponent } from './modifier-playlist/modifier-playlist.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SafePipe } from './pipes/safe.pipe';
     CreerMorceauComponent,
     VoirTracksComponent,
     PlayerComponent,
-    SafePipe
+    SafePipe,
+    ModifierPlaylistComponent
   ],
   imports: [
     NgbModule,

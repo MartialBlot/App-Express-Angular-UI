@@ -2,7 +2,6 @@ import { Component, OnInit, TemplateRef, ViewChild, Input, EventEmitter } from '
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Playlist } from '../models/playlist.model';
 import { PlaylistService } from '../playlist.service';
-import { Track } from '../models/track.model';
 
 @Component({
   selector: 'app-voir-tracks',

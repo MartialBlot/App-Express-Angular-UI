@@ -1,16 +1,18 @@
 <h1 class="title">Vos Playlists</h1>
 <div class="container-fluid playlists-bloc">
-<div class="row offset-2">
-<ng-container class="col-md-4 col-sm-12" *ngFor="let playlist of playlists; let idx = index">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title text-color">{{playlist.title}}</h5>
-      <p class="card-text text-color">Genre : {{playlist.genre}}</p>
-      <button class="btn btn-warning mr-5" type="bouton" (click)='openModalTracks(playlist)'>Titres</button>
-  <button class="btn btn-danger" type="bouton" (click)="deletePlaylist(playlist.id, idx)">Supprimer</button>
-    </div>
+  <div class="row offset-2">
+    <ng-container class="col-md-4 col-sm-12" *ngFor="let playlist of playlists; let idx = index">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-color">{{playlist.title}}</h5>
+          <p class="card-text text-color">Genre : {{playlist.genre}}</p>
+          <button class="btn btn-warning mr-2" type="bouton" (click)='openModalTracks(playlist)'>Titres</button>
+          <button class="btn btn-danger btn-sm mr-2" type="bouton" (click)="deletePlaylist(playlist.id, idx)">Supprimer</button>
+          <button class="btn btn-info btn-sm" type="bouton" (click)="openEditionPlaylist(playlist, playlist.id, playlist.title, playlist.genre)">Modifier</button>
+        </div>
+      </div>
+    </ng-container>
   </div>
-</ng-container>
-</div>
 </div>
 <app-voir-tracks [openModal] = "openModal" [playlist]="playlist" [tracks]="tracks"></app-voir-tracks>
+<app-modifier-playlist [openEdit]="openEdit" [playlistForm]="playlistForm"></app-modifier-playlist>

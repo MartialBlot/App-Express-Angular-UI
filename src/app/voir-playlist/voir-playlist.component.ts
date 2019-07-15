@@ -11,10 +11,12 @@ import { Track } from '../models/track.model';
 export class VoirPlaylistComponent implements OnInit {
 
   openModal: EventEmitter<boolean> = new EventEmitter();
+  openEdit: EventEmitter<boolean> = new EventEmitter();
 
   public playlists;
   public playlist;
   public tracks;
+  public playlistForm;
 
   constructor(private service: PlaylistService,) { }
 
@@ -22,6 +24,11 @@ export class VoirPlaylistComponent implements OnInit {
     this.service.getPlaylists().subscribe((playlists: Playlist) => {
       this.playlists = playlists;
     })
+  }
+
+  openEditionPlaylist(play){
+    this.openEdit.emit(true);
+    this.playlistForm = play;
   }
 
   openModalTracks(playlist){
