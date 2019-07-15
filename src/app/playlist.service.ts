@@ -38,4 +38,11 @@ export class PlaylistService {
     return this.http.post<Track>(`${this.api}/tracks`, trackForm);
   }
 
+  public getTracks(id: number): Observable<Track>{
+    return this.http.get(`${this.api}/tracks/playlist/${id}`).pipe(
+      map((tracks: any) => { return tracks as Track
+      })
+      )
+  };
+
 }

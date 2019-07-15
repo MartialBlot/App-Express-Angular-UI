@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { PlaylistService } from '../playlist.service';
 import { Playlist } from '../models/playlist.model';
+import { Track } from '../models/track.model';
 
 @Component({
   selector: 'app-voir-playlist',
@@ -12,6 +13,8 @@ export class VoirPlaylistComponent implements OnInit {
   openModal: EventEmitter<boolean> = new EventEmitter();
 
   public playlists;
+  public playlist;
+  public tracks;
 
   constructor(private service: PlaylistService,) { }
 
@@ -21,8 +24,12 @@ export class VoirPlaylistComponent implements OnInit {
     })
   }
 
-  openModalTracks(){
+  openModalTracks(playlist){
     this.openModal.emit(true);
+    this.playlist = playlist;
+    this.service.getTracks(playlist.id).subscribe((tracks: Track) => {
+      this.tracks = tracks;
+    })
   }
 
   deletePlaylist(id, index){

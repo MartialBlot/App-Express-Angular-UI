@@ -1,5 +1,8 @@
 import { Component, OnInit, TemplateRef, ViewChild, Input, EventEmitter } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Playlist } from '../models/playlist.model';
+import { PlaylistService } from '../playlist.service';
+import { Track } from '../models/track.model';
 
 @Component({
   selector: 'app-voir-tracks',
@@ -14,8 +17,14 @@ export class VoirTracksComponent implements OnInit {
 
   @Input()
   public openModal: EventEmitter<boolean>;
+  @Input()
+  public playlist: Playlist;
+  @Input()
+  public tracks: Track;
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+
+  constructor(config: NgbModalConfig, private modalService: NgbModal,
+              private service: PlaylistService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
