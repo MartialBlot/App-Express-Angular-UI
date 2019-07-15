@@ -3,7 +3,9 @@
     <h4>Lecture du titre {{track.title}} de {{track.artist}}</h4>
     <hr>
   </div>
-  <iframe width="560" height="315" [src]="track.youtube_url | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+  <div class="player">
+  <iframe [src]="track.youtube_url | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+  </div>
   <div class="modal-footer">
       <button type="button" class="btn btn-warning" (click)="close(content)">Fermer</button>
   </div>
