@@ -8,8 +8,8 @@ import { ModifierPlaylistComponent } from './modifier-playlist/modifier-playlist
 
 const routes: Routes = [ {path: "", component: HomeComponent},
 {path: "playlists", component: VoirPlaylistComponent},
-{path: "newplaylist", component: CreerPlaylistComponent},
-{path: "newtrack", component: CreerMorceauComponent}, ];
+{path: "playlists/new", component: CreerPlaylistComponent},
+{path: "tracks/new", component: CreerMorceauComponent}, ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
