@@ -5,14 +5,14 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-    <form class="offset-1 offset-md-2" (ngSubmit)="editPlaylist(newPlaylist)" #playlist="ngForm">
+    <form class="offset-1 offset-md-2" (ngSubmit)="editPlaylist(playlist,playlistForm.id)" #playlist="ngForm">
     <div class="row mb-5">
     <p class="col-3 text-color">Titre :</p>
-    <input class="col" type='text' placeholder="titre" name="title" #title="ngModel" [(ngModel)]="playlistForm.title">
+    <input class="col" type='text' placeholder="titre" name="title" #title="ngModel" [(ngModel)]="playlistForm.title" [ngModel]>
     </div>
     <div class="row mb-5">
     <p class="col-3 text-color">Genre :</p>
-    <input class="col" type='text' placeholder="genre" name="genre" #genre="ngModel" [(ngModel)]="playlistForm.genre">
+    <input class="col" type='text' placeholder="genre" name="genre" #genre="ngModel" [(ngModel)]="playlistForm.genre" [ngModel]>
     </div>
     <button class='btn btn-success mr-5 mt-3 mb-3' type="submit">Enregistrer la playlist modifiée</button>
     <button class="btn btn-warning" type="bouton" (click)="close()">Fermer</button>

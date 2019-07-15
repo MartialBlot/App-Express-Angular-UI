@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, TemplateRef, Input, EventEmitter } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Playlist } from '../models/playlist.model';
+import { PlaylistService } from '../playlist.service';
 
 @Component({
   selector: 'app-modifier-playlist',
@@ -18,7 +19,8 @@ export class ModifierPlaylistComponent implements OnInit {
   @Input()
   public playlistForm;
 
-  constructor( config: NgbModalConfig, private modalService: NgbModal, ) {
+  constructor( config: NgbModalConfig, private modalService: NgbModal,
+              private service: PlaylistService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -35,7 +37,9 @@ export class ModifierPlaylistComponent implements OnInit {
     this.modalService.dismissAll(content);
   }
 
-  editPlaylist(newPlaylist){
-
+  editPlaylist(playlist, id){
+    this.service.updatePlaylist(id, playlist.value).subscribe((playlist: Playlist) => {
+      this.modalService.dismissAll();
+    })
   }
 }
