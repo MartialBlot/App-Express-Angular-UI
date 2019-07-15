@@ -10,9 +10,9 @@
             <h5 class="card-title ml-2 text-color">{{track.title}}</h5>
             <p class="card-text ml-2 text-color">  Genre : {{playlist.genre}}</p>
             <p class="card-text ml-2 text-color">Artist: {{track.artist}}</p>
-            <button class="btn btn-success play-btn btn-ed" type="bouton" (click)="playTracks(track)">Lire</button>
+            <button class="btn btn-success play-btn" type="bouton" (click)="playTracks(track)">Lire</button>
             <button class="btn btn-danger play-del btn-ed btn-sm" type="bouton" (click)="deleteTrack(track.id, i)">Supprimer</button>
-            <button class="btn btn-info btn-sm" type="bouton" (click)="openEditionTrack(track)">Modifier</button>
+            <button class="btn btn-info btn-sm btn-ed" type="bouton" (click)="openEditionTrack(track)">Modifier</button>
           </div>
         </div>
       </ng-container>

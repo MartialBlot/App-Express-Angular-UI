@@ -47,7 +47,7 @@ export class PlaylistService {
   }
 
   public getTracks(id: number): Observable<Track>{
-    return this.http.get(`${this.api}/tracks/playlists/${id}`).pipe(
+    return this.http.get(`${this.api}/playlists/${id}/tracks`).pipe(
       map((tracks: any) => { return tracks as Track
       })
       )
