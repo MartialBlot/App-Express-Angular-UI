@@ -20,7 +20,7 @@ export class VoirTracksComponent implements OnInit {
   @Input()
   public playlist: Playlist;
   @Input()
-  public tracks: Track;
+  public tracks;
 
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
@@ -39,6 +39,15 @@ export class VoirTracksComponent implements OnInit {
 
   close(content) {
     this.modalService.dismissAll(content);
+  }
+
+  deleteTrack(id, index){
+    if(confirm('Voulez vous vraiment supprimer ?')){
+      this.service.deleteTrack(id).subscribe(() => {
+      });
+      this.tracks.splice(index,1);
+      alert("Playlist supprimée.");
+    }else { };
   }
 
 }

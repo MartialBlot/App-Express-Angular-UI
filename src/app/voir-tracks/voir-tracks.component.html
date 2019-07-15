@@ -2,13 +2,14 @@
     <div class="modal-body">
       <p>Votre playlist : {{playlist.title}}</p>
     </div>
-    <ng-container *ngFor="let track of tracks">
+    <ng-container *ngFor="let track of tracks; let i = index">
       <div *ngIf="track.playlist_id === playlist.id">
         <div>
             <h5 class="card-title ml-2">{{track.title}}</h5>
             <p class="card-text ml-2">  Genre : {{playlist.genre}}</p>
             <p class="card-text ml-2">Artist: {{track.artist}}</p>
             <button class="btn btn-success ml-2" type="bouton">Lire</button>
+            <button class="btn btn-danger ml-4" type="bouton" (click)="deleteTrack(track.id, i)">Supprimer</button>
         <hr>
           </div>
         </div>

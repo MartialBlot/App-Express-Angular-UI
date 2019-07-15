@@ -34,6 +34,14 @@ export class PlaylistService {
     );
   }
 
+  public deleteTrack(id: number): Observable<Track> {
+    return this.http.delete(`${this.api}/tracks/${id}`).pipe(
+      map((tracks: any) => {
+        return  tracks as Track;
+      }),
+    );
+  }
+
   public addTrack(trackForm: Track): Observable <Track>{
     return this.http.post<Track>(`${this.api}/tracks`, trackForm);
   }
