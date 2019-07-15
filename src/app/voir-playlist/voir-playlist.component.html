@@ -4,8 +4,8 @@
 <ng-container class="col-md-4 col-sm-12" *ngFor="let playlist of playlists; let idx = index">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{playlist.title}}</h5>
-      <p class="card-text">Genre : {{playlist.genre}}</p>
+      <h5 class="card-title text-color">{{playlist.title}}</h5>
+      <p class="card-text text-color">Genre : {{playlist.genre}}</p>
       <button class="btn btn-warning mr-5" type="bouton" (click)='openModalTracks(playlist)'>Titres</button>
   <button class="btn btn-danger" type="bouton" (click)="deletePlaylist(playlist.id, idx)">Supprimer</button>
     </div>

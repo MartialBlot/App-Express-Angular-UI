@@ -4,10 +4,19 @@
   color: skyblue;
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: pink;
+  text-shadow: 10px 10px 20px black;
   text-align: center;
 }
 .card{
-  margin:3px;
+  margin:6px;
+  background-image: url("../../assets/images/back.png");
+  background-size: cover;
+}
+
+.text-color{
+  font-size: 20px;
+  color:white;
+  text-shadow: 10px 5px 5px black;
 }
 
 .playlists-bloc{
