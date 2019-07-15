@@ -4,9 +4,12 @@
     </div>
     <ng-container *ngFor="let track of tracks">
       <div *ngIf="track.playlist_id === playlist.id">
-        <div class="card" style="width: 18rem;">
-            <h5 class="card-title">{{track.title}}</h5>
-            <p class="card-text">Genre : {{playlist.genre}}</p>
+        <div>
+            <h5 class="card-title ml-2">{{track.title}}</h5>
+            <p class="card-text ml-2">  Genre : {{playlist.genre}}</p>
+            <p class="card-text ml-2">Artist: {{track.artist}}</p>
+            <button class="btn btn-success ml-2" type="bouton">Lire</button>
+        <hr>
           </div>
         </div>
       </ng-container>
