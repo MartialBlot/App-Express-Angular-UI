@@ -5,6 +5,7 @@
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: pink;
   text-align: center;
+  text-shadow: 10px 10px 20px black;
 }
 
 .menu-title{
@@ -15,12 +16,18 @@
   text-align: center;
   margin-top: 50px;
   margin-bottom: 140px;
+  text-shadow: 10px 10px 20px black;
 }
 
 .link-btn{
   font-size: 22px;
   margin-top: 10px;
   margin-bottom: 10px;
+  box-shadow: 25px 15px 30px black;
+}
+
+.link-btn:hover{
+  margin: -1px;
 }
 
 @media screen and (max-width: 640px) {
