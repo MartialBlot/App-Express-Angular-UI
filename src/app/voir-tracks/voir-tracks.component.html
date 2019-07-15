@@ -1,6 +1,7 @@
 <ng-template #content>
     <div class="modal-body">
-      <p>Votre playlist : {{playlist.title}}</p>
+      <h3>Votre playlist : {{playlist.title}}</h3>
+      <hr>
     </div>
     <ng-container *ngFor="let track of tracks; let i = index">
       <div *ngIf="track.playlist_id === playlist.id">
